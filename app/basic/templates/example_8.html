@@ -1,0 +1,27 @@
+{% extends 'basic_common/base.html' %}
+{% block content %}
+<h1>基本示例8 -- 使用rtl样式,让文件选择按钮居左</h1>
+<span>注意:引入样式文件的时候, css/fileinput-rtl.css 必须在 the css/fileinput.css 之后引入</span>
+<div dir=rtl>
+    <label class="control-label">Select File</label>
+</div>
+<!-- note that your input must just set the `rtl` data property of the plugin or in your javascript code -->
+<form method="post" role="form" enctype="multipart/form-data">
+    <input id="input-8" name="input8[]" multiple type="file" class="file-loading">
+</form>
+<script>
+$(document).on('ready', function() {
+    $("#input-8").fileinput({
+        rtl: true,
+        allowedFileExtensions: ["jpg", "png", "gif"]
+    });
+});
+</script>
+{% endblock %}
+{% block title %}
+    基本示例8 -- 使用rtl样式,让文件选择按钮居左
+{% endblock %}
+{% block css %}
+    {{ super() }}
+    <link href="{{ url_for('lib.static',filename='css/fileinput-rtl.min.css') }}" media="all" rel="stylesheet" type="text/css" />
+{% endblock %}

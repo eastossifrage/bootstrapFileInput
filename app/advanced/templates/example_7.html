@@ -1,0 +1,9 @@
+{% extends 'basic_common/base.html' %}
+{% block content %}
+<h1>基本示例7 -- 设置允许上传的文件格式</h1>
+<label class="control-label">Select File</label>
+<input id="input-7" name="input7[]" multiple type="file" class="file file-loading" data-allowed-file-extensions='["csv", "txt"]'>
+{% endblock %}
+{% block title %}
+    基本示例7 -- 设置允许上传的文件格式
+{% endblock %}

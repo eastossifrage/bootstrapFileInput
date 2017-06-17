@@ -1,0 +1,12 @@
+{% extends 'basic_common/base.html' %}
+{% block content %}
+<h1>基本示例4 -- 设置属性为只读或不可用</h1>
+<label class="control-label">Select File</label>
+<label class="control-label">Readonly Input</label>
+<input id="input-4a" type="file" class="file" readonly="true">
+<label class="control-label">Disabled Input</label>
+<input id="input-4b" type="file" class="file" disabled="true">
+{% endblock %}
+{% block title %}
+    基本示例4 -- 设置属性为只读或不可用
+{% endblock %}

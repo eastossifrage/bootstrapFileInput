@@ -1,0 +1,11 @@
+{% extends 'basic_common/base.html' %}
+{% block content %}
+<h1>基本示例3 -- 利用 file input 属性控制相关选项,如本例可实现多文件上传,但不显示上传按钮</h1>
+<label class="control-label">Select File</label>
+<form method="post" role="form" enctype="multipart/form-data">
+    <input id="input-3" name="input3[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
+</form>
+{% endblock %}
+{% block title %}
+    基本示例3 -- 利用 file input 属性控制相关选项,如本例可实现多文件上传,但不显示上传按钮
+{% endblock %}

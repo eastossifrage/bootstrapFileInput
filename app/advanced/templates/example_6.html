@@ -1,0 +1,18 @@
+{% extends 'basic_common/base.html' %}
+{% block content %}
+<h1>基本示例6 -- 设置最大上传的文件数为10</h1>
+<label class="control-label">Select File</label>
+<input id="input-6" name="input6[]" type="file" multiple class="file-loading">
+<script>
+$(document).on('ready', function() {
+    $("#input-6").fileinput({
+        showUpload: false,
+        maxFileCount: 10,
+        mainClass: "input-group-lg"
+    });
+});
+</script>
+{% endblock %}
+{% block title %}
+    基本示例6 -- 设置最大上传的文件数为10
+{% endblock %}

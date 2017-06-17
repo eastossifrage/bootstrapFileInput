@@ -1,0 +1,14 @@
+{% extends 'basic_common/base.html' %}
+{% block content %}
+<h1>基本示例5 -- 设置为单按钮,并在上传时显示上传等待图标</h1>
+<label class="control-label">Select File</label>
+<input id="input-5" name="input5[]" type="file" multiple class="file-loading">
+<script>
+$(document).on('ready', function() {
+    $("#input-5").fileinput({showCaption: false});
+});
+</script>
+{% endblock %}
+{% block title %}
+    基本示例5 -- 设置为单按钮,并在上传时显示上传等待图标
+{% endblock %}
