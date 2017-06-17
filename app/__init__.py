@@ -15,4 +15,8 @@ def create_app(config_name):
     from .lib import lib as lib_blueprint
     app.register_blueprint(lib_blueprint, url_prefix='/lib')
 
+    # 注册蓝本 basic
+    from .basic import basic as basic_blueprint
+    app.register_blueprint(basic_blueprint, url_prefix='/basic')
+
     return app
