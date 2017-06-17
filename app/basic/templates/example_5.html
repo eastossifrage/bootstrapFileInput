@@ -1,9 +1,9 @@
 {% extends 'basic_common/base.html' %}
 {% block content %}
-<h1>基本示例5 -- 设置为单按钮并隐藏拖拽面板,在上传时显示上传等待图标</h1>
+<h1>基本示例5 -- 设置为单按钮并隐藏文件选择输入框,在上传时显示上传等待图标</h1>
 <label class="control-label">Select File</label>
 <form method="post" role="form" enctype="multipart/form-data">
-    <input id="input-5" name="input5[]" type="file" multiple class="file-loading">
+    <input id="input-5" name="input-5[]" type="file" multiple class="file-loading">
 </form>
 <script>
 $(document).on('ready', function() {
@@ -12,5 +12,5 @@ $(document).on('ready', function() {
 </script>
 {% endblock %}
 {% block title %}
-    基本示例5 -- 设置为单按钮并隐藏拖拽面板,在上传时显示上传等待图标
+    基本示例5 -- 设置为单按钮并隐藏文件选择输入框,在上传时显示上传等待图标
 {% endblock %}

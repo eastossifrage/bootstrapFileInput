@@ -37,12 +37,6 @@ def example_2():
 
 @basic.route('/example_3', methods=['GET', 'POST'])
 def example_3():
-    if request.method == 'POST':
-        files = request.files['input-3[]']
-        for file in files:
-            if file and allowed_file(file.filename):
-                filename = secure_filename(file.filename)
-                file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
 
     return render_template('example_3.html')
 
@@ -56,21 +50,17 @@ def example_4():
 @basic.route('/example_5', methods=['GET', 'POST'])
 def example_5():
     if request.method == 'POST':
-        file = request.files['input-5']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
+        files = request.files.getlist('input-5[]')
+        for file in files:
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
 
     return render_template('example_5.html')
 
 
 @basic.route('/example_6', methods=['GET', 'POST'])
 def example_6():
-    if request.method == 'POST':
-        file = request.files['input-6']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
 
     return render_template('example_6.html')
 
@@ -78,10 +68,11 @@ def example_6():
 @basic.route('/example_7', methods=['GET', 'POST'])
 def example_7():
     if request.method == 'POST':
-        file = request.files['input-7']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
+        files = request.files.getlist('input-7[]')
+        for file in files:
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
 
     return render_template('example_7.html')
 
@@ -89,9 +80,10 @@ def example_7():
 @basic.route('/example_8', methods=['GET', 'POST'])
 def example_8():
     if request.method == 'POST':
-        file = request.files['input-8']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
+        files = request.files.getlist('input-8[]')
+        for file in files:
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
 
     return render_template('example_8.html')
