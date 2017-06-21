@@ -1,0 +1,18 @@
+{% extends 'advanced_common/base.html' %}
+{% block content %}
+<h1>进阶示例5</h1>
+<label class="control-label">Select File</label>
+<input id="input-22" name="input22[]" type="file" class="file-loading" accept="text/plain" multiple>
+<script>
+$(document).on('ready', function() {
+    $("#input-22").fileinput({
+        previewFileType: "text",
+        allowedFileExtensions: ["txt", "md", "ini", "text"],
+        previewClass: "bg-warning"
+    });
+});
+</script>
+{% endblock %}
+{% block title %}
+    进阶示例5
+{% endblock %}

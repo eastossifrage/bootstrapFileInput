@@ -1,0 +1,31 @@
+{% extends 'advanced_common/base.html' %}
+{% block content %}
+<h1>进阶示例2</h1>
+<label class="control-label">Planets and Satellites</label>
+<input id="input-25" name="input25[]" type="file" multiple class="file-loading">
+<script>
+$(document).on('ready', function() {
+    $("#input-25").fileinput({
+       initialPreview: [
+            'http://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/631px-FullMoon2010.jpg',
+            'http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/600px-Earth_Eastern_Hemisphere.jpg'
+        ],
+        initialPreviewAsData: true,
+        initialPreviewConfig: [
+            {caption: "Moon.jpg", size: 930321, width: "120px", key: 1, showDelete: false},
+            {caption: "Earth.jpg", size: 1218822, width: "120px", key: 2, showZoom: false}
+        ],
+        deleteUrl: "{{ url_for('advanced.delete') }}",
+        overwriteInitial: true,
+        initialCaption: "进阶示例第二例"
+    });
+});
+</script>
+<hr>
+<p>
+    设置最大的文件上传大小为 100K . 展示服务器上的图片内容,实现 finder 功能. 设置 <code>overwriteInitial</code> 为 <code>true</code>, 新选择的文件会覆盖原有文件.
+</p>
+{% endblock %}
+{% block title %}
+    进阶示例2
+{% endblock %}

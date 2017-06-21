@@ -1,0 +1,23 @@
+{% extends 'advanced_common/base.html' %}
+{% block content %}
+<h1>进阶示例10</h1>
+<label class="control-label">Select File</label>
+<input id="input-43" name="input43[]" type="file" multiple class="file-loading">
+<div id="errorBlock" class="help-block"></div>
+<script>
+$(document).on('ready', function() {
+    $("#input-43").fileinput({
+        showPreview: false,
+        allowedFileExtensions: ["jpg", "jpeg", "gif", "png"],
+        elErrorContainer: "#errorBlock"
+    });
+});
+</script>
+<br>
+<p>
+    仅仅允许上传后缀为 "jpg", "gif", "png", "txt" 的文件. 不显示文件预览功能. 且设置错误提示的显示位置.
+</p>
+{% endblock %}
+{% block title %}
+    进阶示例10
+{% endblock %}

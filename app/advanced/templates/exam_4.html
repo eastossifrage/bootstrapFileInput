@@ -1,0 +1,25 @@
+{% extends 'advanced_common/base.html' %}
+{% block content %}
+<h1>进阶示例4</h1>
+<label class="control-label">Select File</label>
+<input id="input-21" type="file" accept="image/*" class="file-loading">
+<script>
+$(document).on('ready', function() {
+    $("#input-21").fileinput({
+        previewFileType: "image",
+        browseClass: "btn btn-success",
+        browseLabel: "Pick Image",
+        browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i> ",
+        removeClass: "btn btn-danger",
+        removeLabel: "Delete",
+        removeIcon: "<i class=\"glyphicon glyphicon-trash\"></i> ",
+        uploadClass: "btn btn-info",
+        uploadLabel: "Upload",
+        uploadIcon: "<i class=\"glyphicon glyphicon-upload\"></i> "
+    });
+});
+</script>
+{% endblock %}
+{% block title %}
+    进阶示例4
+{% endblock %}

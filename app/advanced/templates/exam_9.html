@@ -1,0 +1,21 @@
+{% extends 'advanced_common/base.html' %}
+{% block content %}
+<h1>进阶示例9</h1>
+<label class="control-label">Select File</label>
+<input id="input-42" name="input42[]" type="file" multiple class="file-loading">
+<script>
+$(document).on('ready', function() {
+    $("#input-42").fileinput({
+        maxFileCount: 10,
+        allowedFileExtensions: ["jpg", "gif", "png", "txt"]
+    });
+});
+</script>
+<br>
+<p>
+    仅仅允许上传后缀为 "jpg", "gif", "png", "txt" 的文件. 最大上传的文件数是 10.
+</p>
+{% endblock %}
+{% block title %}
+    进阶示例9
+{% endblock %}

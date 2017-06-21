@@ -19,4 +19,8 @@ def create_app(config_name):
     from .basic import basic as basic_blueprint
     app.register_blueprint(basic_blueprint, url_prefix='/basic')
 
+    # 注册蓝本 advanced
+    from .advanced import advanced as advanced_blueprint
+    app.register_blueprint(advanced_blueprint, url_prefix='/advanced')
+
     return app

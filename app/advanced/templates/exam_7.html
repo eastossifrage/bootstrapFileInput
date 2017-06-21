@@ -1,0 +1,32 @@
+{% extends 'advanced_common/base.html' %}
+{% block content %}
+<h1>进阶示例7</h1>
+<label class="control-label">Select File</label>
+<input id="input-40" name="input40[]" type="file" class="file" multiple>
+<br>
+<button type="button" class="btn btn-warning btn-modify">Modify</button>
+<script>
+$(document).on('ready', function() {
+    $(".btn-modify").on("click", function() {
+        var $btn = $(this), $input = $("#input-40");
+        if ($btn.text() == "Modify") {
+            $("#input-40").fileinput("disable").fileinput("refresh", {showUpload: false});
+            $btn.html("Revert");
+            alert("Hurray! I have disabled the input and hidden the upload button.");
+        }
+        else {
+            $("#input-40").fileinput("enable").fileinput("refresh", {showUpload: true});
+            $btn.html("Modify");
+            alert("Hurray! I have reverted back the input to enabled with the upload button.");
+        }
+    });
+});
+</script>
+<br>
+<p>
+    调用插件方法, 点击 modify 按钮来打开获关闭插件功能.
+</p>
+{% endblock %}
+{% block title %}
+    进阶示例7
+{% endblock %}
