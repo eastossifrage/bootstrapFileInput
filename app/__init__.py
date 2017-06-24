@@ -23,4 +23,8 @@ def create_app(config_name):
     from .advanced import advanced as advanced_blueprint
     app.register_blueprint(advanced_blueprint, url_prefix='/advanced')
 
+    # 注册蓝本 folder
+    from .folder import folder as folder_blueprint
+    app.register_blueprint(folder_blueprint, url_prefix='/folder')
+
     return app

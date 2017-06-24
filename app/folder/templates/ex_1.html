@@ -1,0 +1,20 @@
+{% extends 'folder_common/base.html' %}
+{% block content %}
+<h1>文件夹上传示例1</h1>
+<label class="control-label">Upload File From Folder</label>
+<input id="input-folder-1" type="file" class="file-loading" webkitdirectory>
+<script>
+$(document).on('ready', function() {
+    $("#input-folder-1").fileinput({
+        browseLabel: '选择文件夹...'
+    });
+});
+</script>
+<hr>
+<p>
+    设置选择文件夹功能, 但只支持选择文件夹内的单一文件.
+</p>
+{% endblock %}
+{% block title %}
+    文件夹上传示例1
+{% endblock %}
